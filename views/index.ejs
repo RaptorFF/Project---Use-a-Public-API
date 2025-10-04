@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>It's a Joke!</title>
+    <link rel="stylesheet" type="text/css" href="styles/main.css">
+</head>
+<body>
+    <h1>Listen to this...</h1>
+    <% if (locals.joke) { %>
+    <div class="card">
+        <% if (joke.type === "single") { %>
+        <h2><%= joke.joke %></h2>
+        <% } else { %>
+            <h2><%= joke.setup %></h2>
+            <h2><%= joke.delivery %></h2>
+        <% } %>
+    </div>
+    <% } else { %>
+        <h2><%= joke.error %></h2>
+        <% } %>
+</body>
+</html>
